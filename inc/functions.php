@@ -1,8 +1,5 @@
 <?php
-// PHP - Random Quote Generator
-
-// Create the Multidimensional array of quote elements and name it quotes
-// Each inner array element should be an associative array
+// Array to hold quotes 
 $quotes = [
     1 => [
         'quote' => "I feel the need... the need for speed.",
@@ -39,14 +36,14 @@ $quotes = [
     ]
 ];
 
-// Create the getRandomQuuote function and name it getRandomQuote
+// Function to return a random array element
 function getRandomQuote($array)
 {
     $randNumber = rand(1, count($array));
     return $array[$randNumber];
 }
 
-// Create the printQuote funtion and name it printQuote
+// Function to get a random quote then format for display
 function printQuote($array)
 {
     $quote = getRandomQuote($array);
@@ -54,22 +51,18 @@ function printQuote($array)
     foreach ($quote as $key => $value) {
         if ($key === 'quote') {
             $this_quote = $value;
-            // $quoteDisplay = "$this_quote";
             $quoteDisplay = "<p class=\"quote\">$this_quote</p>";
         }
         if ($key === 'source') {
             $this_source = $value;
-            // $quoteDisplay .= " - $this_source";
             $quoteDisplay .= "<p class=\"source\">$this_source";
         }
         if ($key === 'citation') {
             $this_citation = $value;
-            // $quoteDisplay .= " - $this_citation";
             $quoteDisplay .= "<span class=\"citation\">$this_citation</span>";
         }
         if ($key === 'year') {
             $this_year = $value;
-            // $quoteDisplay .= " - $this_year";
             $quoteDisplay .= "<span class=\"citation\">$this_year</span>";
         }
     }
